@@ -1,0 +1,28 @@
+
+
+entity Apartment {
+	address String
+    rent Integer
+    
+}
+
+entity User {
+	
+}
+
+entity Post {
+	title String
+    text String
+}
+
+relationship OneToMany {
+	Apartment{posts} to Post
+    User{posts} to Post
+}
+
+paginate Post with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except User
