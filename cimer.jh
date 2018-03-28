@@ -1,7 +1,7 @@
 
 
 entity User {
-	
+
 }
 
 entity Post {
@@ -9,10 +9,8 @@ entity Post {
     text String
 }
 
-relationship OneToMany {
-    User{posts} to Post
+relationship ManyToOne {
+    Post{owner} to User
 }
-
-paginate Post with infinite-scroll
 
 dto * with mapstruct
