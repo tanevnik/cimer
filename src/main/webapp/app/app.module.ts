@@ -1,37 +1,30 @@
 import './vendor.ts';
 
-import { NgModule, Injector } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Ng2Webstorage, LocalStorageService, SessionStorageService  } from 'ngx-webstorage';
-import { JhiEventManager } from 'ng-jhipster';
+import {Injector, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {LocalStorageService, Ng2Webstorage, SessionStorageService} from 'ngx-webstorage';
+import {JhiEventManager} from 'ng-jhipster';
 
-import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
-import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
-import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
-import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { CimerSharedModule, UserRouteAccessService } from './shared';
-import { CimerAppRoutingModule} from './app-routing.module';
-import { CimerHomeModule } from './home/home.module';
-import { CimerAdminModule } from './admin/admin.module';
-import { CimerAccountModule } from './account/account.module';
-import { CimerEntityModule } from './entities/entity.module';
-import { PaginationConfig } from './blocks/config/uib-pagination.config';
+import {AuthInterceptor} from './blocks/interceptor/auth.interceptor';
+import {AuthExpiredInterceptor} from './blocks/interceptor/auth-expired.interceptor';
+import {ErrorHandlerInterceptor} from './blocks/interceptor/errorhandler.interceptor';
+import {NotificationInterceptor} from './blocks/interceptor/notification.interceptor';
+import {CimerSharedModule, UserRouteAccessService} from './shared';
+import {CimerAppRoutingModule} from './app-routing.module';
+import {CimerHomeModule} from './home';
+import {CimerAdminModule} from './admin/admin.module';
+import {CimerAccountModule} from './account/account.module';
+import {CimerEntityModule} from './entities/entity.module';
+import {PaginationConfig} from './blocks/config/uib-pagination.config';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import {
-    JhiMainComponent,
-    NavbarComponent,
-    FooterComponent,
-    ProfileService,
-    PageRibbonComponent,
-    ErrorComponent
-} from './layouts';
+import {ErrorComponent, FooterComponent, JhiMainComponent, NavbarComponent, PageRibbonComponent, ProfileService} from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
         CimerAppRoutingModule,
-        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
+        Ng2Webstorage.forRoot({prefix: 'jhi', separator: '-'}),
         CimerSharedModule,
         CimerHomeModule,
         CimerAdminModule,
@@ -84,6 +77,7 @@ import {
             ]
         }
     ],
-    bootstrap: [ JhiMainComponent ]
+    bootstrap: [JhiMainComponent]
 })
-export class CimerAppModule {}
+export class CimerAppModule {
+}

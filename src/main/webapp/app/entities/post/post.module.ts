@@ -1,20 +1,20 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 
-import { CimerSharedModule } from '../../shared';
-import { CimerAdminModule } from '../../admin/admin.module';
+import {CimerSharedModule} from '../../shared';
+import {CimerAdminModule} from '../../admin/admin.module';
 import {
-    PostService,
-    PostPopupService,
-    PostComponent,
+    PostDeleteDialogComponent,
+    PostDeletePopupComponent,
     PostDetailComponent,
     PostDialogComponent,
     PostPopupComponent,
-    PostDeletePopupComponent,
-    PostDeleteDialogComponent,
-    postRoute,
     postPopupRoute,
+    PostPopupService,
+    postRoute,
+    PostService,
 } from './';
+import {PostComponent} from './post.component';
 
 const ENTITY_STATES = [
     ...postRoute,
@@ -28,7 +28,6 @@ const ENTITY_STATES = [
         RouterModule.forChild(ENTITY_STATES)
     ],
     declarations: [
-        PostComponent,
         PostDetailComponent,
         PostDialogComponent,
         PostDeleteDialogComponent,
